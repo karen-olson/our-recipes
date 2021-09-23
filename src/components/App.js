@@ -20,31 +20,32 @@ import { Switch, Route, Link } from "react-router-dom";
 function App() {
   const [recipes, setRecipes] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("http://localhost:3001/recipes")
-  //     .then((resp) => resp.json())
-  //     .then((data) => setRecipes(data));
-  // }, []);
-
   useEffect(() => {
-    fetch("../db.json")
+    fetch("db.json")
       .then((resp) => resp.json())
-      .then((data) => setRecipes(data));
+      .then((recipeObject) => setRecipes(recipeObject.recipes));
   }, []);
-
-  function onRecipeClick(id) {
-    // changes route to RecipeDetailPage
-    // renders the RecipeThumbnail and RecipeDetails from matching recipe
-  }
 
   return (
     <div className="App">
       <NavBar />
-      <Home />
-      <RecipesPage recipes={recipes} onRecipeClick={onRecipeClick} />
-      <RecipeDetailPage />
-      <SavedRecipesPage recipes={recipes} />
-      <NewRecipeForm />
+      <Switch>
+        <Route path="/recipes/saved">
+          <SavedRecipesPage recipes={recipes} />
+        </Route>
+        <Route path="/recipes/new">
+          <NewRecipeForm />
+        </Route>
+        <Route exact path="/recipes/:id">
+          <RecipeDetailPage recipes={recipes} />
+        </Route>
+        <Route exact path="/recipes">
+          <RecipesPage recipes={recipes} />
+        </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
     </div>
   );
 }

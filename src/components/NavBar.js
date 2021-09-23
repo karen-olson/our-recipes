@@ -7,9 +7,15 @@ function NavBar() {
       <NavLink exact to="/">
         Home
       </NavLink>
-      <NavLink to="/recipes">Recipes</NavLink>
-      <NavLink to="/recipes/saved">Saved Recipes</NavLink>
-      <NavLink to="/recipes/new">Add a Recipe</NavLink>
+      <NavLink exact to="/recipes">
+        Recipes
+      </NavLink>
+      <NavLink exact to="/recipes/saved">
+        Saved Recipes
+      </NavLink>
+      <NavLink exact to="/recipes/new">
+        Add a Recipe
+      </NavLink>
     </div>
   );
 }

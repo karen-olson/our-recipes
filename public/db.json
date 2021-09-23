@@ -3,6 +3,7 @@
       {
         "id": 1,
         "name": "Bourbon Chicken",
+        "category": "dinner",
         "image": "https://www.shugarysweets.com/wp-content/uploads/2019/01/instant-pot-bourbon-chicken-3.jpg",
         "prepTimeInMinutes": 25,
         "servings": 6,
@@ -35,6 +36,7 @@
       {
         "id": 2,
         "name": "Vegan Burritos",
+        "category": "dinner",
         "image": "https://veganheaven.org/wp-content/uploads/2019/06/Vegan-Burritos_.jpg",
         "prepTimeInMinutes": 20,
         "servings": 7,
