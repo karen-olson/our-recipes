@@ -23,14 +23,19 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:3001/recipes")
       .then((resp) => resp.json())
-      .then((recipes) => setRecipes(recipes));
+      .then((recipes) => console.log(recipes));
   }, []);
+
+  // function onRecipeClick(id) {
+  //   // changes route to RecipeDetailPage
+  //   // renders the RecipeThumbnail and RecipeDetails from matching recipe
+  // }
 
   return (
     <div className="App">
       <NavBar />
       <Home />
-      <RecipesPage recipes={recipes} />
+      <RecipesPage recipes={recipes} onRecipeClick={onRecipeClick} />
       <RecipeDetailPage />
       <SavedRecipesPage recipes={recipes} />
       <NewRecipeForm />
