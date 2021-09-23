@@ -2,7 +2,7 @@ import React from "react";
 import RecipeThumbnail from "./RecipeThumbnail";
 
 function RecipeDetailPage({ recipes, id }) {
-  console.log(recipes);
+  // console.log(recipes);
   // const recipe = recipes.filter((recipe) => recipe.id === id);
 
   return (

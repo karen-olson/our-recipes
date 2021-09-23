@@ -20,10 +20,16 @@ import { Switch, Route, Link } from "react-router-dom";
 function App() {
   const [recipes, setRecipes] = useState([]);
 
+  // useEffect(() => {
+  //   fetch("http://localhost:3001/recipes")
+  //     .then((resp) => resp.json())
+  //     .then((data) => setRecipes(data));
+  // }, []);
+
   useEffect(() => {
-    fetch("http://localhost:3001/recipes")
+    fetch("../db.json")
       .then((resp) => resp.json())
-      .then((recipes) => console.log(recipes));
+      .then((data) => setRecipes(data));
   }, []);
 
   function onRecipeClick(id) {
