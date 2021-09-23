@@ -2,7 +2,6 @@ import React from "react";
 import RecipeDetails from "./RecipeDetails";
 
 function RecipeThumbnail({ recipe, onRecipeClick }) {
-  console.log("recipe: ", recipe.name);
   return (
     <>
       {/* <h3 onClick={onRecipeClick}>{recipe.name}</h3> */}

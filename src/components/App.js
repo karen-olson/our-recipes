@@ -8,8 +8,6 @@ import SavedRecipesPage from "./SavedRecipesPage";
 import NewRecipeForm from "./NewRecipeForm";
 import { Switch, Route, Link } from "react-router-dom";
 
-// Test changes for commit check
-
 // DELIVERABLES:
 // 1) Your app should use at least 5 components in a way that keeps your code well organized
 // 2) There should be at least 3 client-side routes using react-router
@@ -28,10 +26,10 @@ function App() {
       .then((recipes) => console.log(recipes));
   }, []);
 
-  // function onRecipeClick(id) {
-  //   // changes route to RecipeDetailPage
-  //   // renders the RecipeThumbnail and RecipeDetails from matching recipe
-  // }
+  function onRecipeClick(id) {
+    // changes route to RecipeDetailPage
+    // renders the RecipeThumbnail and RecipeDetails from matching recipe
+  }
 
   return (
     <div className="App">
