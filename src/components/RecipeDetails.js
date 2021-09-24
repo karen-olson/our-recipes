@@ -29,6 +29,7 @@ function RecipeDetails({ recipe }) {
       <ul>{ingredientsList}</ul>
       <h3>Instructions</h3>
       <ol>{instructionsList}</ol>
+      <a href={sourceUrl}>See Original Recipe</a>
     </>
   );
 }

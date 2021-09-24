@@ -21,10 +21,22 @@ function App() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    fetch("db.json")
+    fetch("http://localhost:3001/recipes")
       .then((resp) => resp.json())
-      .then((recipeObject) => setRecipes(recipeObject.recipes));
+      .then((recipes) => setRecipes(recipes));
   }, []);
+
+  function onRecipeSubmit(newRecipeObject) {
+    fetch("http://localhost:3001/recipes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newRecipeObject),
+    })
+      .then((response) => response.json())
+      .then((newRecipeObject) => setRecipes([...recipes, newRecipeObject]));
+  }
 
   return (
     <div className="App">
@@ -34,7 +46,7 @@ function App() {
           <SavedRecipesPage recipes={recipes} />
         </Route>
         <Route path="/recipes/new">
-          <NewRecipeForm />
+          <NewRecipeForm onRecipeSubmit={onRecipeSubmit} />
         </Route>
         <Route exact path="/recipes/:id">
           <RecipeDetailPage recipes={recipes} />

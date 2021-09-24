@@ -14,6 +14,8 @@ function RecipesPage({ recipes }) {
     setFilterBy(currentFilter);
   }
 
+  console.log("recipes: ", recipes);
+
   const recipeThumbnails = recipes.map((recipe) => (
     <RecipeThumbnail recipe={recipe} key={recipe.id} />
   ));
