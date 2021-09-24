@@ -32,7 +32,7 @@
       ],
       "sourceUrl": "https://www.shugarysweets.com/bourbon-chicken/",
       "likes": 23,
-      "saved": true
+      "saved": false
     },
     {
       "id": 2,
@@ -67,7 +67,7 @@
       ],
       "sourceUrl": "https://veganheaven.org/recipe/vegan-burrito/",
       "likes": 8,
-      "saved": false
+      "saved": true
     },
     {
       "name": "Chocolate chip cookies",
@@ -100,7 +100,7 @@
       ],
       "sourceUrl": "https://joyfoodsunshine.com/the-most-amazing-chocolate-chip-cookies/#recipe",
       "likes": 0,
-      "saved": false,
+      "saved": true,
       "id": 3
     },
     {
@@ -132,7 +132,7 @@
         "Reheat chicken in the microwave or on a baking sheet and bake uncovered at 350°F for 15-20 minutes until the chicken is heated through."
       ],
       "sourceUrl": "https://www.mamaknowsglutenfree.com/gluten-free-fried-chicken/#recipe",
-      "likes": 0,
+      "likes": 3,
       "saved": false,
       "id": 4
     },

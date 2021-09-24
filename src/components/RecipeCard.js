@@ -52,7 +52,7 @@ function RecipeCard({ recipe }) {
           {saved ? "Remove from saved recipes" : "Add to saved recipes"}
         </span>
         <img src={recipe.image} alt={recipe.name}></img>
-        {currentUrl === `/recipes` ? (
+        {currentUrl === `/recipes` || currentUrl === `/recipes/saved` ? (
           <Link to={`/recipes/${recipe.id}`}>View Details</Link>
         ) : (
           <Link to={`/recipes`}>Go Back</Link>
