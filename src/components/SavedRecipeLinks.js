@@ -6,7 +6,6 @@ function SavedRecipeLinks({ savedRecipes }) {
   ));
   return (
     <div>
-      <h1>Recipe List</h1>
       <ul>Saved Recipes{recipeLinks}</ul>
     </div>
   );

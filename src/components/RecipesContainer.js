@@ -26,7 +26,6 @@ function RecipesContainer({ recipes }) {
 
   return (
     <>
-      <h1>Recipes Page</h1>
       <SearchBar
         onSearch={setSearch}
         onFilterChange={onFilterChange}

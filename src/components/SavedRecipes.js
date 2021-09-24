@@ -9,7 +9,7 @@ function SavedRecipes({ recipes }) {
 
   return (
     <>
-      <h1>Saved Recipes Page</h1>
+      <h1>Saved Recipes</h1>
       <SavedRecipeLinks savedRecipes={savedRecipes} />
       <RecipesContainer recipes={savedRecipes} />
     </>
