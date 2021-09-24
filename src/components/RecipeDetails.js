@@ -1,4 +1,5 @@
 import React from "react";
+import { nanoid } from "nanoid";
 
 function RecipeDetails({ recipe }) {
   const {
@@ -11,11 +12,11 @@ function RecipeDetails({ recipe }) {
   } = recipe;
 
   const ingredientsList = ingredients.map((ingredient) => (
-    <li>{ingredient}</li>
+    <li key={nanoid()}>{ingredient}</li>
   ));
 
   const instructionsList = instructions.map((instruction) => (
-    <li>{instruction}</li>
+    <li key={nanoid()}>{instruction}</li>
   ));
 
   const formattedCategory = category[0].toUpperCase() + category.slice(1);

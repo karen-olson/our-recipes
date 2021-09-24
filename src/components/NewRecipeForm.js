@@ -17,24 +17,21 @@ function NewRecipeForm({ onRecipeSubmit }) {
   function handleChange(e) {
     const name = e.target.name;
     const value = e.target.value;
-
-    if (name === "ingredients" || name === "instructions") {
-      const parsedValue = value.split("\n");
-      setFormData({ ...formData, [name]: parsedValue });
-    } else if (name === "prepTimeInMinutes" || name === "servings") {
-      const parsedValue = parseInt(value);
-      setFormData({ ...formData, [name]: parsedValue });
-    } else if (name === "category") {
-      const parsedValue = value.toLowerCase();
-      setFormData({ ...formData, [name]: parsedValue });
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
+    setFormData({ ...formData, [name]: value });
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    onRecipeSubmit(formData);
+    const recipeObject = {
+      ...formData,
+      ingredients: formData.ingredients.split("\n"),
+      instructions: formData.instructions.split("\n"),
+      prepTimeInMinutes: parseInt(formData.prepTimeInMinutes),
+      servings: parseInt(formData.servings),
+      category: formData.category.toLowerCase(),
+    };
+
+    onRecipeSubmit(recipeObject);
     setFormData({
       name: "",
       category: "",
@@ -48,8 +45,6 @@ function NewRecipeForm({ onRecipeSubmit }) {
       saved: false,
     });
   }
-
-  console.log(formData);
 
   return (
     <div>

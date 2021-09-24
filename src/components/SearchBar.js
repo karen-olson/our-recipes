@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
-function SearchBar({ onSearch, onFilterChange }) {
+function SearchBar({ onSearch, onFilterChange, filterBy }) {
   const [currentSearch, setCurrentSearch] = useState("");
-  const [currentFilter, setCurrentFilter] = useState("all");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -10,8 +9,7 @@ function SearchBar({ onSearch, onFilterChange }) {
   }
 
   function handleFilterChange(e) {
-    setCurrentFilter(e.target.value);
-    onFilterChange((currentFilter) => currentFilter);
+    onFilterChange(e.target.value);
   }
 
   return (
@@ -28,7 +26,11 @@ function SearchBar({ onSearch, onFilterChange }) {
       </form>
       <label>
         Filter recipes:
-        <select name="categories" onChange={handleFilterChange}>
+        <select
+          name="categories"
+          onChange={handleFilterChange}
+          value={filterBy}
+        >
           <option value="all">Select a Category</option>
           <option value="breakfast">Breakfast</option>
           <option value="lunch">Lunch</option>
