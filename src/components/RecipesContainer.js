@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { Card, Grid } from "semantic-ui-react";
 import SearchBar from "./SearchBar";
 import RecipeCard from "./RecipeCard";
 
-function RecipesContainer({ recipes }) {
+function RecipesContainer({ recipes, onSaveClick }) {
   const [search, setSearch] = useState("");
   const [filterBy, setFilterBy] = useState("all");
 
@@ -22,7 +23,9 @@ function RecipesContainer({ recipes }) {
     .filter((recipe) =>
       recipe.name.toLowerCase().includes(search.toLowerCase())
     )
-    .map((recipe) => <RecipeCard recipe={recipe} key={recipe.id} />);
+    .map((recipe) => (
+      <RecipeCard recipe={recipe} key={recipe.id} onSaveClick={onSaveClick} />
+    ));
 
   return (
     <>
@@ -31,7 +34,9 @@ function RecipesContainer({ recipes }) {
         onFilterChange={onFilterChange}
         filterBy={filterBy}
       />
-      {recipeCards}
+      <Card.Group centered itemsPerRow="3" textAlign="center">
+        {recipeCards}
+      </Card.Group>
     </>
   );
 }

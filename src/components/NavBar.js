@@ -1,22 +1,23 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Menu } from "semantic-ui-react";
 
 function NavBar() {
   return (
-    <div>
-      <NavLink exact to="/">
+    <Menu attached={true} size="huge" position="right">
+      <Menu.Item as={NavLink} exact to="/">
         Home
-      </NavLink>
-      <NavLink exact to="/recipes">
+      </Menu.Item>
+      <Menu.Item as={NavLink} exact to="/recipes">
         Recipes
-      </NavLink>
-      <NavLink exact to="/recipes/saved">
+      </Menu.Item>
+      <Menu.Item as={NavLink} exact to="/recipes/saved">
         Saved Recipes
-      </NavLink>
-      <NavLink exact to="/recipes/new">
+      </Menu.Item>
+      <Menu.Item as={NavLink} exact to="/recipes/new">
         Add a Recipe
-      </NavLink>
-    </div>
+      </Menu.Item>
+    </Menu>
   );
 }
 

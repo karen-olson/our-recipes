@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
+import { Card, Icon, Image, Button, Label } from "semantic-ui-react";
 
-function RecipeCard({ recipe }) {
+function RecipeCard({ recipe, onSaveClick }) {
   const [likes, setLikes] = useState(recipe.likes);
   const [saved, setSaved] = useState(recipe.saved);
 
@@ -27,37 +28,50 @@ function RecipeCard({ recipe }) {
   // Just need the parent to rerender instead (SavedRecipes)
   // Add state in the parent component --> how?
   function handleSaveClick(e) {
+    // ERROR: onSaveClick is not a function???
+
     setSaved(!saved);
-    fetch(`http://localhost:3001/recipes/${recipe.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ saved: !saved }),
-    })
-      .then((response) => response.json())
-      .then((updatedRecipe) => setSaved(updatedRecipe.saved));
+    const updatedRecipe = { ...recipe, saved: !saved };
+
+    console.log(onSaveClick);
+    onSaveClick(updatedRecipe);
   }
 
   if (recipe) {
     return (
-      <>
-        <h3>{recipe.name}</h3>
-        <button onClick={handleLikeClick}>👍</button>
-        <span>
-          {likes} {likes === 1 ? "like" : "likes"}
-        </span>
-        <button onClick={handleSaveClick}>⭐</button>
-        <span>
-          {saved ? "Remove from saved recipes" : "Add to saved recipes"}
-        </span>
-        <img src={recipe.image} alt={recipe.name}></img>
+      <Card>
+        <Card.Content>
+          <Card.Header>{recipe.name}</Card.Header>
+        </Card.Content>
+        <Card.Content extra>
+          <Button as="div" labelPosition="right">
+            <Button icon color="instagram" onClick={handleLikeClick}>
+              <Icon name="heart" />
+              Like
+            </Button>
+            <Label basic pointing="left">
+              {likes}
+            </Label>
+          </Button>
+          <Button as="div" labelPosition="right">
+            <Button icon color="instagram" onClick={handleSaveClick}>
+              <Icon name="star" />
+              {saved ? "Unsave" : "Save"}
+            </Button>
+          </Button>
+        </Card.Content>
+        <Image src={recipe.image} alt={recipe.name}></Image>
+
         {currentUrl === `/recipes` || currentUrl === `/recipes/saved` ? (
-          <Link to={`/recipes/${recipe.id}`}>View Details</Link>
+          <Button as={Link} to={`/recipes/${recipe.id}`}>
+            View Details
+          </Button>
         ) : (
-          <Link to={`/recipes`}>Go Back</Link>
+          <Button as={Link} to={`/recipes`}>
+            Go Back
+          </Button>
         )}
-      </>
+      </Card>
     );
   } else {
     return <h3>Loading Recipe</h3>;

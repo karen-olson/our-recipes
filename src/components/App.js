@@ -30,12 +30,35 @@ function App() {
       .then((newRecipeObject) => setRecipes([...recipes, newRecipeObject]));
   }
 
+  function onSaveClick(updatedRecipe) {
+    const updatedRecipes = recipes.map((recipe) => {
+      if (recipe.id === updatedRecipe.id) {
+        return updatedRecipe;
+      } else {
+        return recipe;
+      }
+    });
+
+    // SOLUTION
+    // just send a patch request for the one recipe
+    // but THEN update state for the entire recipes array
+
+    fetch(`http://localhost:3001/recipes/${updatedRecipe.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedRecipe),
+    })
+      .then((response) => response.json())
+      .then(() => setRecipes(updatedRecipes));
+  }
+
   console.log("recipes in app: ", recipes);
 
   return (
     <div className="App">
       <NavBar />
-      <Button>Example Button</Button>
       <Switch>
         <Route path="/recipes/saved">
           <SavedRecipes recipes={recipes} />
@@ -47,7 +70,7 @@ function App() {
           <DetailedRecipe recipes={recipes} />
         </Route>
         <Route exact path="/recipes">
-          <RecipesContainer recipes={recipes} />
+          <RecipesContainer recipes={recipes} onSaveClick={onSaveClick} />
         </Route>
         <Route exact path="/">
           <Home />

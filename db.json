@@ -1,40 +1,6 @@
 {
   "recipes": [
     {
-      "id": 1,
-      "name": "Bourbon Chicken",
-      "category": "dinner",
-      "image": "https://www.shugarysweets.com/wp-content/uploads/2019/01/instant-pot-bourbon-chicken-3.jpg",
-      "prepTimeInMinutes": 25,
-      "servings": 6,
-      "ingredients": [
-        "2 lbs boneless, skinless chicken thighs (or breasts)",
-        "0.5 cup apple juice",
-        "0.5 cup Bourbon",
-        "0.25 cup soy sauce",
-        "0.5 cup light brown sugar",
-        "0.25 cup ketchup",
-        "2 Tbsp honey",
-        "0.5 tsp crushed red pepper flakes",
-        "4 cloves garlic, pressed",
-        "0.5 tsp ginger",
-        "3 Tbsp cornstarch",
-        "3 Tbsp water",
-        "3 green onions, sliced"
-      ],
-      "instructions": [
-        "In the bottom of your instant pot, start adding your ingredients. Apple juice, Bourbon, soy sauce, brown sugar, ketchup, honey, crushed red pepper flakes, fresh garlic, and ginger. Use a whisk and mix it really good. Place your fresh or frozen chicken into the instant pot, making sure if's coated in the bourbon mixture.",
-        "Secure the lid to your pressure cooker, and turn the release valve on top to sealing. Turn on the Instant Pot and press manual (or pressure cook) on high. Set the timer for 12 minutes (or 18 minutes if using frozen chicken).",
-        "Allow the pressure to build and cook. While it's cooking, mix your cornstarch and cold water in a small bowl until combined. Set aside.",
-        "Once the chicken is done cooking, allow it to naturally release for 5 minutes. Then do a quick release.",
-        "Remove your chicken from the instant pot and place it on a cutting board. Dice into bite sized pieces.",
-        "Turn your pressure cooker to saute and slowly add in the cornstarch mixture. Using your whisk, mix continuously until thickened. This takes about two minutes! Turn pressure cooker off and return chicken to the sauce. Top with green onions and enjoy!"
-      ],
-      "sourceUrl": "https://www.shugarysweets.com/bourbon-chicken/",
-      "likes": 23,
-      "saved": false
-    },
-    {
       "id": 2,
       "name": "Vegan Burritos",
       "category": "dinner",
@@ -67,7 +33,7 @@
       ],
       "sourceUrl": "https://veganheaven.org/recipe/vegan-burrito/",
       "likes": 8,
-      "saved": true
+      "saved": false
     },
     {
       "name": "Chocolate chip cookies",
