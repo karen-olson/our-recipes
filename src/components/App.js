@@ -7,6 +7,7 @@ import DetailedRecipe from "./DetailedRecipe";
 import SavedRecipes from "./SavedRecipes";
 import NewRecipeForm from "./NewRecipeForm";
 import { Switch, Route } from "react-router-dom";
+import { Button } from "semantic-ui-react";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -34,6 +35,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      <Button>Example Button</Button>
       <Switch>
         <Route path="/recipes/saved">
           <SavedRecipes recipes={recipes} />
