@@ -1,19 +1,29 @@
 import React from "react";
+import { List } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 function SavedRecipeLinks({ savedRecipes }) {
   const recipeLinks = savedRecipes.map((recipe) => (
     // <li key={recipe.id}>
-    <Link key={recipe.id} to={`/recipes/saved/${recipe.id}`}>
+    // <Link key={recipe.id} to={`/recipes/saved/${recipe.id}`}>
+    //   {recipe.name}
+    // </Link>
+    <List.Item as={Link} key={recipe.id} to={`/recipes/saved/${recipe.id}`}>
       {recipe.name}
-    </Link>
+    </List.Item>
     // {recipe.name}
     // </li>
   ));
 
   console.log("recipe links: ", recipeLinks);
 
-  return <ul>Saved Recipes{recipeLinks}</ul>;
+  return (
+    <List link floated="left" relaxed>
+      <h3>Select a Recipe</h3>
+      <hr />
+      {recipeLinks}
+    </List>
+  );
 }
 
 export default SavedRecipeLinks;

@@ -11,8 +11,10 @@ function SavedRecipes({ recipes }) {
 
   return (
     <>
-      <h1>Saved Recipes</h1>
       <SavedRecipeLinks savedRecipes={savedRecipes} />
+      <Route exact path={match.url}>
+        <h3>Choose a recipe from the list</h3>
+      </Route>
       <Route path={`${match.url}/:id`}>
         <DetailedRecipe recipes={savedRecipes} />
       </Route>
