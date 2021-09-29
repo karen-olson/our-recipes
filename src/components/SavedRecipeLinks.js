@@ -18,7 +18,12 @@ function SavedRecipeLinks({ savedRecipes }) {
   console.log("recipe links: ", recipeLinks);
 
   return (
-    <List link floated="left" relaxed>
+    <List
+      link
+      floated="left"
+      relaxed
+      style={{ margin: "30px", marginTop: "40px" }}
+    >
       <h3>Select a Recipe</h3>
       <hr />
       {recipeLinks}

@@ -1,6 +1,7 @@
 import React from "react";
 import RecipeCard from "./RecipeCard";
 import { useParams } from "react-router-dom";
+import { Container, Segment } from "semantic-ui-react";
 import RecipeDetails from "./RecipeDetails";
 
 function DetailedRecipe({ recipes }) {
@@ -11,10 +12,14 @@ function DetailedRecipe({ recipes }) {
 
   console.log("params: ", useParams());
   return (
-    <>
-      <RecipeCard recipe={recipe} />
-      <RecipeDetails recipe={recipe} />
-    </>
+    <Container>
+      <Segment className="centered">
+        <RecipeCard recipe={recipe} />
+      </Segment>
+      <Segment>
+        <RecipeDetails recipe={recipe} />
+      </Segment>
+    </Container>
   );
 }
 

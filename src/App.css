@@ -28,6 +28,11 @@
   color: #61dafb;
 }
 
+.centered {
+  margin: 100px;
+  /* not sure how to center the recipe card on the recipe details page */
+}
+
 .card {
   height: 31rem;
 }

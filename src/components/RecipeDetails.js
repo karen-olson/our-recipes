@@ -1,5 +1,6 @@
 import React from "react";
 import { nanoid } from "nanoid";
+import { Segment } from "semantic-ui-react";
 
 function RecipeDetails({ recipe }) {
   const {
@@ -22,16 +23,24 @@ function RecipeDetails({ recipe }) {
   const formattedCategory = category[0].toUpperCase() + category.slice(1);
 
   return (
-    <>
-      <p>Category: {formattedCategory}</p>
-      <p>Prep time: {prepTimeInMinutes} minutes</p>
-      <p>Servings: {servings}</p>
-      <h3>Ingredients</h3>
-      <ul>{ingredientsList}</ul>
-      <h3>Instructions</h3>
-      <ol>{instructionsList}</ol>
-      <a href={sourceUrl}>See Original Recipe</a>
-    </>
+    <Segment.Group>
+      <Segment>
+        <p>Category: {formattedCategory}</p>
+        <p>Prep Time: {prepTimeInMinutes} minutes</p>
+        <p>Servings: {servings}</p>
+      </Segment>
+      <Segment textAlign="left">
+        <h3>Ingredients</h3>
+        <ul>{ingredientsList}</ul>
+      </Segment>
+      <Segment textAlign="left">
+        <h3>Instructions</h3>
+        <ol>{instructionsList}</ol>
+      </Segment>
+      <Segment>
+        <a href={sourceUrl}>See Original Recipe</a>
+      </Segment>
+    </Segment.Group>
   );
 }
 
