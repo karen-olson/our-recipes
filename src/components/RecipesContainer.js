@@ -34,7 +34,12 @@ function RecipesContainer({ recipes, onSaveClick }) {
         onFilterChange={onFilterChange}
         filterBy={filterBy}
       />
-      <Card.Group centered itemsPerRow="3" textAlign="center">
+      <Card.Group
+        centered
+        itemsPerRow="3"
+        textAlign="center"
+        className="card-group"
+      >
         {recipeCards}
       </Card.Group>
     </>

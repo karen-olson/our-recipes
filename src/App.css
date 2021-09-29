@@ -28,6 +28,21 @@
   color: #61dafb;
 }
 
+.card {
+  height: 31rem;
+}
+
+.card-image {
+  width: 66%;
+  height: 66%;
+  object-fit: cover;
+  margin: 1rem 2rem;
+}
+
+.card-group {
+  padding: 4rem 4rem;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

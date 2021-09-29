@@ -60,7 +60,12 @@ function RecipeCard({ recipe, onSaveClick }) {
             </Button>
           </Button>
         </Card.Content>
-        <Image src={recipe.image} alt={recipe.name}></Image>
+        <Image
+          centered
+          className="card-image"
+          src={recipe.image}
+          alt={recipe.name}
+        ></Image>
 
         {currentUrl === `/recipes` || currentUrl === `/recipes/saved` ? (
           <Button as={Link} to={`/recipes/${recipe.id}`}>
