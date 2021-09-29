@@ -36,22 +36,22 @@
       "saved": true
     },
     {
-      "name": "Chocolate chip cookies",
+      "name": "Chocolate Chip Cookies",
       "category": "dessert",
       "image": "https://joyfoodsunshine.com/wp-content/uploads/2018/02/best-chocolate-chip-cookies-recipe-5.jpg",
       "prepTimeInMinutes": "30",
       "servings": "36",
       "ingredients": [
-        "▢1 cup salted butter* softened",
-        "▢1 cup white (granulated) sugar",
-        "▢1 cup light brown sugar packed",
-        "▢2 tsp pure vanilla extract",
-        "▢2 large eggs",
-        "▢3 cups all-purpose flour",
-        "▢1 tsp baking soda",
-        "▢½ tsp baking powder",
-        "▢1 tsp sea salt***",
-        "▢2 cups chocolate chips (or chunks, or chopped chocolate)"
+        "1 cup salted butter* softened",
+        "1 cup white (granulated) sugar",
+        "1 cup light brown sugar packed",
+        "2 tsp pure vanilla extract",
+        "2 large eggs",
+        "3 cups all-purpose flour",
+        "1 tsp baking soda",
+        "½ tsp baking powder",
+        "1 tsp sea salt***",
+        "2 cups chocolate chips (or chunks, or chopped chocolate)"
       ],
       "instructions": [
         "Preheat oven to 375 degrees F. Line a baking pan with parchment paper and set aside.",
@@ -70,22 +70,22 @@
       "id": 3
     },
     {
-      "name": "Gluten-Free Southern Fried Chicken {Dairy-Free Option}",
+      "name": "Gluten-Free Southern Fried Chicken",
       "category": "dinner",
       "image": "https://www.mamaknowsglutenfree.com/wp-content/uploads/2020/05/gluten-free-fried-chicken-2b.jpg",
       "prepTimeInMinutes": 180,
       "servings": 6,
       "ingredients": [
-        "▢6 chicken thighs,▢6 chicken drumsticks,▢3 cups milk dairy-free use unsweetened almond milk, cashew or coconut milk,▢3 tablespoons white vinegar,▢2 teaspoons salt,▢1 teaspoon pepper▢2 cups all-purpose gluten-free flour",
-        "▢1 cup cornstarch",
-        "▢1 tablespoon onion powder",
-        "▢1 tablespoon garlic powder",
-        "▢2 teaspoons salt",
-        "▢1 tablespoon paprika",
-        "▢1 tablespoon dried thyme",
-        "▢1 tablespoon dried oregano",
-        "▢1 tablespoon dried basil",
-        "▢4 cup vegetable oil for frying I like peanut oil"
+        "6 chicken thighs,6 chicken drumsticks,3 cups milk dairy-free use unsweetened almond milk, cashew or coconut milk,3 tablespoons white vinegar,2 teaspoons salt,1 teaspoon pepper2 cups all-purpose gluten-free flour",
+        "1 cup cornstarch",
+        "1 tablespoon onion powder",
+        "1 tablespoon garlic powder",
+        "2 teaspoons salt",
+        "1 tablespoon paprika",
+        "1 tablespoon dried thyme",
+        "1 tablespoon dried oregano",
+        "1 tablespoon dried basil",
+        "4 cup vegetable oil for frying I like peanut oil"
       ],
       "instructions": [
         "In a large mixing bowl, whisk together milk, white vinegar, salt, and pepper. Add in chicken pieces. Cover the bowl with plastic wrap and refrigerate for at least 2 hours. It is best to allow the chicken to marinate overnight if you can.",
@@ -101,29 +101,6 @@
       "likes": 3,
       "saved": false,
       "id": 4
-    },
-    {
-      "name": "monstera",
-      "category": "dessert",
-      "image": "https://unsplash.com/photos/7d7OR-RvufU",
-      "prepTimeInMinutes": 30,
-      "servings": 36,
-      "ingredients": [
-        "one",
-        "two",
-        "three",
-        "four"
-      ],
-      "instructions": [
-        "one",
-        "two",
-        "three",
-        "four"
-      ],
-      "sourceUrl": "https://www.mamaknowsglutenfree.com/gluten-free-fried-chicken/#recipe",
-      "likes": 0,
-      "saved": false,
-      "id": 5
     }
   ]
 }
