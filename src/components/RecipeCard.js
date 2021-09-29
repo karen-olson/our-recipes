@@ -37,15 +37,26 @@ function RecipeCard({ recipe, onSaveClick }) {
     onSaveClick(updatedRecipe);
   }
 
+  function longRecipeName() {
+    return recipe.name.length() > 48;
+  }
+
   if (recipe) {
     return (
       <Card>
         <Card.Content>
-          <Card.Header>{recipe.name}</Card.Header>
+          <Card.Header style={{ height: "2.5rem", fontSize: "x-large" }}>
+            {recipe.name}
+          </Card.Header>
         </Card.Content>
         <Card.Content extra>
           <Button as="div" labelPosition="right">
-            <Button icon color="instagram" onClick={handleLikeClick}>
+            <Button
+              icon
+              color="instagram"
+              onClick={handleLikeClick}
+              size="tiny"
+            >
               <Icon name="heart" />
               Like
             </Button>
@@ -54,7 +65,12 @@ function RecipeCard({ recipe, onSaveClick }) {
             </Label>
           </Button>
           <Button as="div" labelPosition="right">
-            <Button icon color="instagram" onClick={handleSaveClick}>
+            <Button
+              icon
+              color="instagram"
+              onClick={handleSaveClick}
+              size="tiny"
+            >
               <Icon name="star" />
               {saved ? "Unsave" : "Save"}
             </Button>

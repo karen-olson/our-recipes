@@ -43,6 +43,14 @@
   padding: 4rem 4rem;
 }
 
+.header {
+  font-size: 40px;
+}
+
+.overflow-text {
+  font-size: small;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
