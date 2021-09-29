@@ -1,44 +1,53 @@
 import React, { useState } from "react";
+import { Input, Select, Button } from "semantic-ui-react";
 
 function SearchBar({ onSearch, onFilterChange, filterBy }) {
   const [currentSearch, setCurrentSearch] = useState("");
 
+  const options = [
+    { key: "all", text: "Select a category", value: "all" },
+    { key: "breakfast", text: "Breakfast", value: "breakfast" },
+    { key: "lunch", text: "Lunch", value: "lunch" },
+    { key: "dinner", text: "Dinner", value: "dinner" },
+    { key: "snacks", text: "Snacks", value: "snacks" },
+    { key: "dessert", text: "Dessert", value: "dessert" },
+  ];
+
   function handleSubmit(e) {
     e.preventDefault();
+    console.log("currentSearch in handleSubmit: ", currentSearch);
     onSearch(currentSearch);
   }
 
-  function handleFilterChange(e) {
-    onFilterChange(e.target.value);
+  function handleFilterChange(e, { value }) {
+    console.log("value in handleFilterChange: ", value);
+    onFilterChange(value);
   }
 
   return (
     <>
       <form className="search-bar" onSubmit={handleSubmit}>
-        <input
+        <Input
           type="text"
+          placeholder="Search..."
+          action
           id="search"
-          placeholder="Search for a recipe"
+          name="search"
           value={currentSearch}
           onChange={(e) => setCurrentSearch(e.target.value)}
-        />
-        <button type="submit">Submit</button>
-      </form>
-      <label>
-        Filter recipes:
-        <select
-          name="categories"
-          onChange={handleFilterChange}
-          value={filterBy}
         >
-          <option value="all">Select a Category</option>
-          <option value="breakfast">Breakfast</option>
-          <option value="lunch">Lunch</option>
-          <option value="dinner">Dinner</option>
-          <option value="snacks">Snacks</option>
-          <option value="dessert">Dessert</option>
-        </select>
-      </label>
+          <input />
+          <Select
+            compact
+            options={options}
+            id="categories"
+            name="categories"
+            value={filterBy}
+            onChange={handleFilterChange}
+          />
+          <Button type="submit">Search</Button>
+        </Input>
+      </form>
     </>
   );
 }
