@@ -1,17 +1,21 @@
 import React from "react";
+import { Route, useRouteMatch } from "react-router-dom";
 import SavedRecipeLinks from "./SavedRecipeLinks";
-import RecipesContainer from "./RecipesContainer";
+import DetailedRecipe from "./DetailedRecipe";
 
 function SavedRecipes({ recipes }) {
   const savedRecipes = recipes.filter((recipe) => recipe.saved === true);
-  console.log("recipes in saved: ", recipes);
-  // console.log("saved recipes: ", savedRecipes);
+
+  const match = useRouteMatch();
+  console.log("match: ", match);
 
   return (
     <>
       <h1>Saved Recipes</h1>
       <SavedRecipeLinks savedRecipes={savedRecipes} />
-      <RecipesContainer recipes={savedRecipes} />
+      <Route path={`${match.url}/:id`}>
+        <DetailedRecipe recipes={savedRecipes} />
+      </Route>
     </>
   );
 }

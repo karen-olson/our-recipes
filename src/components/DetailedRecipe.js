@@ -9,6 +9,7 @@ function DetailedRecipe({ recipes }) {
   const id = parseInt(useParams().id);
   const recipe = recipes.filter((recipe) => recipe.id === id)[0];
 
+  console.log("params: ", useParams());
   return (
     <>
       <RecipeCard recipe={recipe} />
