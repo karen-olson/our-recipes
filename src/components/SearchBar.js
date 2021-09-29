@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Input, Select, Button } from "semantic-ui-react";
 
-function SearchBar({ onSearch, onFilterChange, filterBy }) {
-  const [currentSearch, setCurrentSearch] = useState("");
+function SearchBar({ onSearch }) {
+  const [currentSearch, setCurrentSearch] = useState({
+    search: "",
+    category: "all",
+  });
 
   const options = [
     { key: "all", text: "Select a category", value: "all" },
@@ -19,31 +22,34 @@ function SearchBar({ onSearch, onFilterChange, filterBy }) {
     onSearch(currentSearch);
   }
 
-  function handleFilterChange(e, { value }) {
-    console.log("value in handleFilterChange: ", value);
-    onFilterChange(value);
+  function handleSearchChange(e, { name, value }) {
+    setCurrentSearch({ ...currentSearch, [name]: value });
   }
 
   return (
     <>
-      <form className="search-bar" onSubmit={handleSubmit}>
+      <form
+        className="search-bar"
+        onSubmit={handleSubmit}
+        style={{ margin: "15px" }}
+      >
         <Input
           type="text"
           placeholder="Search..."
           action
           id="search"
           name="search"
-          value={currentSearch}
-          onChange={(e) => setCurrentSearch(e.target.value)}
+          value={currentSearch.search}
+          onChange={handleSearchChange}
         >
           <input />
           <Select
             compact
             options={options}
-            id="categories"
-            name="categories"
-            value={filterBy}
-            onChange={handleFilterChange}
+            id="category"
+            name="category"
+            value={currentSearch.category}
+            onChange={handleSearchChange}
           />
           <Button type="submit">Search</Button>
         </Input>

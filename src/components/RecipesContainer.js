@@ -4,24 +4,23 @@ import SearchBar from "./SearchBar";
 import RecipeCard from "./RecipeCard";
 
 function RecipesContainer({ recipes, onSaveClick }) {
-  const [search, setSearch] = useState("");
-  const [filterBy, setFilterBy] = useState("all");
+  const [search, setSearch] = useState({ search: "", category: "all" });
 
-  function onFilterChange(currentFilter) {
-    setFilterBy(currentFilter);
-  }
+  console.log(search);
 
   let filteredRecipes;
 
-  if (filterBy === "all") {
+  if (search.category === "all") {
     filteredRecipes = recipes;
   } else {
-    filteredRecipes = recipes.filter((recipe) => recipe.category === filterBy);
+    filteredRecipes = recipes.filter(
+      (recipe) => recipe.category === search.category
+    );
   }
 
   const recipeCards = filteredRecipes
     .filter((recipe) =>
-      recipe.name.toLowerCase().includes(search.toLowerCase())
+      recipe.name.toLowerCase().includes(search.search.toLowerCase())
     )
     .map((recipe) => (
       <RecipeCard recipe={recipe} key={recipe.id} onSaveClick={onSaveClick} />
@@ -29,11 +28,7 @@ function RecipesContainer({ recipes, onSaveClick }) {
 
   return (
     <>
-      <SearchBar
-        onSearch={setSearch}
-        onFilterChange={onFilterChange}
-        filterBy={filterBy}
-      />
+      <SearchBar onSearch={setSearch} />
       <Card.Group
         centered
         itemsPerRow="3"
