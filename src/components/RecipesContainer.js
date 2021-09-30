@@ -6,8 +6,6 @@ import RecipeCard from "./RecipeCard";
 function RecipesContainer({ recipes, onSaveClick }) {
   const [search, setSearch] = useState({ search: "", category: "all" });
 
-  console.log(search);
-
   let filteredRecipes;
 
   if (search.category === "all") {

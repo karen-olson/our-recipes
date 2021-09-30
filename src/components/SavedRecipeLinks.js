@@ -15,8 +15,6 @@ function SavedRecipeLinks({ savedRecipes }) {
     // </li>
   ));
 
-  console.log("recipe links: ", recipeLinks);
-
   return (
     <List
       link

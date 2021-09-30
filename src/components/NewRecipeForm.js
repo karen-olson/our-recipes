@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Form, Grid, Checkbox, Button } from "semantic-ui-react";
 
 function NewRecipeForm({ onRecipeSubmit }) {
   const [formData, setFormData] = useState({
@@ -49,91 +50,112 @@ function NewRecipeForm({ onRecipeSubmit }) {
   return (
     <div>
       <h1>Add a Recipe</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">
-          Name
-          <input
-            type="text"
-            name="name"
-            // placeholder="Recipe name"
-            onChange={handleChange}
-            value={formData.name}
-          ></input>
-        </label>
-        <label htmlFor="category">
-          Category
-          <input
-            type="text"
-            name="category"
-            // placeholder="Category"
-            onChange={handleChange}
-            value={formData.category}
-          ></input>
-        </label>
-        <label htmlFor="image">
-          Image
-          <input
-            type="text"
-            name="image"
-            // placeholder="Image URL"
-            onChange={handleChange}
-            value={formData.image}
-          ></input>
-        </label>
-        <label htmlFor="prepTimeInMinutes">
-          Prep Time in Minutes
-          <input
-            type="text"
-            name="prepTimeInMinutes"
-            placeholder="Enter a number"
-            onChange={handleChange}
-            value={formData.prepTimeInMinutes}
-          ></input>
-        </label>
-        <label htmlFor="servings">
-          Servings
-          <input
-            type="text"
-            name="servings"
-            placeholder="Enter a number"
-            onChange={handleChange}
-            value={formData.servings}
-          ></input>
-        </label>
-        <label htmlFor="ingredients">
-          Ingredients
-          <textarea
-            name="ingredients"
-            // placeholder="Paste the ingredients list here."
-            onChange={handleChange}
-            value={formData.ingredients}
-            rows="8"
-            cols="50"
-          ></textarea>
-        </label>
-        <label htmlFor="instructions">
-          Instructions
-          <textarea
-            name="instructions"
-            // placeholder="Enter the instructions here."
-            onChange={handleChange}
-            value={formData.instructions}
-            rows="8"
-            cols="50"
-          ></textarea>
-        </label>
-        <label htmlFor="sourceUrl">
-          Source URL
-          <input
-            type="text"
-            name="sourceUrl"
-            placeholder="Enter a link to the original recipe"
-            onChange={handleChange}
-            value={formData.sourceUrl}
-          ></input>
-        </label>
-        <button type="submit">Submit</button>
-      </form>
+      <Form size="small">
+        <Form.Field width={2} className="form-field">
+          <label>First Name</label>
+          <input placeholder="First Name" />
+        </Form.Field>
+        <Form.Field width={2} className="form-field">
+          <label>Last Name</label>
+          <input placeholder="Last Name" />
+        </Form.Field>
+        <Form.Field className="form-field">
+          <Checkbox label="I agree to the Terms and Conditions" />
+        </Form.Field>
+        <Button type="submit" width={2} className="form-field">
+          Submit
+        </Button>
+      </Form>
+      {/* <Grid>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group widths="equal" className="form-group">
+            <Form.Field>
+              <label htmlFor="name">Name</label>
+              <Form.Input
+                type="text"
+                name="name"
+                placeholder="Name"
+                onChange={handleChange}
+                value={formData.name}
+                // className="form-input"
+              />
+            </Form.Field>
+            <Form.Field>
+              <label htmlFor="category">Category</label>
+              <Form.Input
+                type="text"
+                name="category"
+                placeholder="Category"
+                onChange={handleChange}
+                value={formData.category}
+              />
+            </Form.Field>
+            <Form.Field>
+              <label htmlFor="image">Image</label>
+              <Form.Input
+                type="text"
+                name="image"
+                placeholder="Image URL"
+                onChange={handleChange}
+                value={formData.image}
+              />
+            </Form.Field>
+            <Form.Field>
+              <label htmlFor="prepTimeInMinutes">Prep Time in Minutes</label>
+              <Form.Input
+                type="text"
+                name="prepTimeInMinutes"
+                placeholder="Enter a number"
+                onChange={handleChange}
+                value={formData.prepTimeInMinutes}
+              />
+            </Form.Field>
+            <Form.Field>
+              <label htmlFor="servings">Servings</label>
+              <Form.Input
+                type="text"
+                name="servings"
+                placeholder="Enter a number"
+                onChange={handleChange}
+                value={formData.servings}
+              />
+            </Form.Field>
+            <Form.Field>
+              <label htmlFor="ingredients">Ingredients</label>
+              <Form.TextArea
+                name="ingredients"
+                placeholder="Ingredients list"
+                onChange={handleChange}
+                value={formData.ingredients}
+                rows="8"
+                cols="50"
+              />
+            </Form.Field>
+            <Form.Field>
+              <label htmlFor="instructions">Instructions</label>
+              <Form.TextArea
+                name="instructions"
+                placeholder="Instructions"
+                onChange={handleChange}
+                value={formData.instructions}
+                rows="8"
+                cols="50"
+              />
+            </Form.Field>
+            <Form.Field>
+              <label htmlFor="sourceUrl">Source URL</label>
+              <Form.Input
+                type="text"
+                name="sourceUrl"
+                placeholder="Enter a link to the original recipe"
+                onChange={handleChange}
+                value={formData.sourceUrl}
+              />
+            </Form.Field>
+            <Form.Button type="submit">Submit</Form.Button>
+          </Form.Group>
+        </Form>
+      </Grid> */}
     </div>
   );
 }

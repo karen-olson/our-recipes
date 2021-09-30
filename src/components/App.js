@@ -7,7 +7,6 @@ import DetailedRecipe from "./DetailedRecipe";
 import SavedRecipes from "./SavedRecipes";
 import NewRecipeForm from "./NewRecipeForm";
 import { Switch, Route } from "react-router-dom";
-import { Button } from "semantic-ui-react";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -39,10 +38,6 @@ function App() {
       }
     });
 
-    // SOLUTION
-    // just send a patch request for the one recipe
-    // but THEN update state for the entire recipes array
-
     fetch(`http://localhost:3001/recipes/${updatedRecipe.id}`, {
       method: "PATCH",
       headers: {
@@ -53,8 +48,6 @@ function App() {
       .then((response) => response.json())
       .then(() => setRecipes(updatedRecipes));
   }
-
-  console.log("recipes in app: ", recipes);
 
   return (
     <div className="App">

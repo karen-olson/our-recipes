@@ -18,7 +18,6 @@ function SearchBar({ onSearch }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("currentSearch in handleSubmit: ", currentSearch);
     onSearch(currentSearch);
   }
 

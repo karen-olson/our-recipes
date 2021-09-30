@@ -20,25 +20,14 @@ function RecipeCard({ recipe, onSaveClick }) {
       .then((updatedRecipe) => setLikes(updatedRecipe.likes));
   }
 
-  // Why is this only updating after a refresh? State is being reset.
-  // Is it because state would need to be updated in the parent to re-render the whole page?
-  // But this should at least re-render the component which would change the text from "Remove from saved..." to "Add to saved..."
-  // Changed the ternary for displaying "Remove from..." to "Add to..." so that it's based on state rather than the recipe object's saved property
-  // Now the RecipeCard component is rerendering after a state change
-  // Just need the parent to rerender instead (SavedRecipes)
-  // Add state in the parent component --> how?
+  // ERROR: onSaveClick is not a function???
   function handleSaveClick(e) {
-    // ERROR: onSaveClick is not a function???
-
     setSaved(!saved);
     const updatedRecipe = { ...recipe, saved: !saved };
 
-    console.log(onSaveClick);
-    onSaveClick(updatedRecipe);
-  }
+    console.log("on save click: ", onSaveClick);
 
-  function longRecipeName() {
-    return recipe.name.length() > 48;
+    onSaveClick(updatedRecipe);
   }
 
   if (recipe) {
@@ -82,7 +71,6 @@ function RecipeCard({ recipe, onSaveClick }) {
           src={recipe.image}
           alt={recipe.name}
         ></Image>
-
         {currentUrl === `/recipes` || currentUrl === `/recipes/saved` ? (
           <Button as={Link} to={`/recipes/${recipe.id}`}>
             View Details
