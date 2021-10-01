@@ -20,12 +20,9 @@ function RecipeCard({ recipe, onSaveClick }) {
       .then((updatedRecipe) => setLikes(updatedRecipe.likes));
   }
 
-  // ERROR: onSaveClick is not a function???
   function handleSaveClick(e) {
     setSaved(!saved);
     const updatedRecipe = { ...recipe, saved: !saved };
-
-    console.log("on save click: ", onSaveClick);
 
     onSaveClick(updatedRecipe);
   }

@@ -54,7 +54,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/recipes/saved">
-          <SavedRecipes recipes={recipes} />
+          <SavedRecipes recipes={recipes} onSaveClick={onSaveClick} />
         </Route>
         <Route path="/recipes/new">
           <NewRecipeForm onRecipeSubmit={onRecipeSubmit} />

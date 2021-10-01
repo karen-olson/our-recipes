@@ -23,6 +23,7 @@ function NewRecipeForm({ onRecipeSubmit }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+
     const recipeObject = {
       ...formData,
       ingredients: formData.ingredients.split("\n"),
@@ -33,6 +34,7 @@ function NewRecipeForm({ onRecipeSubmit }) {
     };
 
     onRecipeSubmit(recipeObject);
+
     setFormData({
       name: "",
       category: "",
@@ -50,23 +52,7 @@ function NewRecipeForm({ onRecipeSubmit }) {
   return (
     <div>
       <h1>Add a Recipe</h1>
-      <Form size="small">
-        <Form.Field width={2} className="form-field">
-          <label>First Name</label>
-          <input placeholder="First Name" />
-        </Form.Field>
-        <Form.Field width={2} className="form-field">
-          <label>Last Name</label>
-          <input placeholder="Last Name" />
-        </Form.Field>
-        <Form.Field className="form-field">
-          <Checkbox label="I agree to the Terms and Conditions" />
-        </Form.Field>
-        <Button type="submit" width={2} className="form-field">
-          Submit
-        </Button>
-      </Form>
-      {/* <Grid>
+      <Grid>
         <Form onSubmit={handleSubmit}>
           <Form.Group widths="equal" className="form-group">
             <Form.Field>
@@ -152,10 +138,12 @@ function NewRecipeForm({ onRecipeSubmit }) {
                 value={formData.sourceUrl}
               />
             </Form.Field>
-            <Form.Button type="submit">Submit</Form.Button>
+            <Form.Button type="submit" onSubmit={handleSubmit}>
+              Submit
+            </Form.Button>
           </Form.Group>
         </Form>
-      </Grid> */}
+      </Grid>
     </div>
   );
 }
