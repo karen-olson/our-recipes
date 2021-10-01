@@ -32,8 +32,8 @@
         "Fold in the sides and then roll the burrito up and wrap it in foil. Then cut it into half with a sharp knife. Enjoy!"
       ],
       "sourceUrl": "https://veganheaven.org/recipe/vegan-burrito/",
-      "likes": 13,
-      "saved": false
+      "likes": 15,
+      "saved": true
     },
     {
       "name": "Chocolate Chip Cookies",
@@ -65,7 +65,7 @@
         "Let them sit on the baking pan for 2 minutes before removing to cooling rack."
       ],
       "sourceUrl": "https://joyfoodsunshine.com/the-most-amazing-chocolate-chip-cookies/#recipe",
-      "likes": 0,
+      "likes": 9,
       "saved": true,
       "id": 3
     },
@@ -99,7 +99,7 @@
       ],
       "sourceUrl": "https://www.mamaknowsglutenfree.com/gluten-free-fried-chicken/#recipe",
       "likes": 3,
-      "saved": false,
+      "saved": true,
       "id": 4
     },
     {
@@ -123,7 +123,7 @@
       ],
       "sourceUrl": "https://www.allrecipes.com/recipe/77489/crispy-rosemary-chicken-and-fries/",
       "likes": 0,
-      "saved": true,
+      "saved": false,
       "id": 5
     },
     {

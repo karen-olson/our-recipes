@@ -1,14 +1,27 @@
 import React from "react";
+import AliceCarousel from "react-alice-carousel";
+
 import { Header, Icon, Image } from "semantic-ui-react";
 
-function Home() {
+function Home({ recipes }) {
+  const images = recipes.map((recipe) => (
+    <img src={recipe.image} className="sliderimg" />
+  ));
+
   return (
     <div>
-      <Header as="h2" icon textAlign="center">
-        <Icon name="users" circular />
-        <Header.Content>Find a Recipe</Header.Content>
-      </Header>
-      <Image centered size="small" src="logo192.png" />
+      <h1 style={{ fontSize: "60px" }}>Our Recipes</h1>
+      <h2>A community-based recipe hub</h2>
+      <hr></hr>
+      <br></br>
+      <p style={{ fontSize: "large" }}>
+        Discover recipes submitted by people around the world. Submit your own
+        recipes to contribute to our community. Share the love!
+      </p>
+      <br></br>
+      <AliceCarousel autoPlay autoPlayInterval="3000">
+        {images}
+      </AliceCarousel>
     </div>
   );
 }

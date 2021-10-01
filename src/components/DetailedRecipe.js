@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { Container, Segment } from "semantic-ui-react";
 import RecipeDetails from "./RecipeDetails";
 
-function DetailedRecipe({ recipes, onSaveClick }) {
+function DetailedRecipe({ recipes, onClick }) {
   const id = parseInt(useParams().id);
   const recipe = recipes.filter((recipe) => recipe.id === id)[0];
 
@@ -12,7 +12,7 @@ function DetailedRecipe({ recipes, onSaveClick }) {
     return (
       <Container>
         <Segment className="centered">
-          <RecipeCard recipe={recipe} onSaveClick={onSaveClick} />
+          <RecipeCard recipe={recipe} onClick={onClick} />
         </Segment>
         <Segment>
           <RecipeDetails recipe={recipe} />

@@ -1,5 +1,6 @@
 import "../App.css";
 import React, { useEffect, useState } from "react";
+import "react-alice-carousel/lib/alice-carousel.css";
 import NavBar from "./NavBar";
 import Home from "./Home";
 import RecipesContainer from "./RecipesContainer";
@@ -29,7 +30,28 @@ function App() {
       .then((newRecipeObject) => setRecipes([...recipes, newRecipeObject]));
   }
 
-  function onSaveClick(updatedRecipe) {
+  // function onLikeClick(updatedRecipe) {
+  //   const updatedRecipe = recipes.map((recipe) => {
+  //     if (recipe.id === updatedRecipe.id) {
+  //       return updatedRecipe;
+  //     } else {
+  //       return recipe;
+  //     }
+  //   });
+
+  //   fetch(`http://localhost:3001/recipes/${updatedRecipe.id}`, {
+  //     method: "PATCH",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(updatedRecipe),
+  //   })
+  //     .then((response) => response.json())
+  //     .then(() => setRecipes(updatedRecipes));
+
+  // }
+
+  function onClick(updatedRecipe) {
     const updatedRecipes = recipes.map((recipe) => {
       if (recipe.id === updatedRecipe.id) {
         return updatedRecipe;
@@ -54,7 +76,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/recipes/saved">
-          <SavedRecipes recipes={recipes} onSaveClick={onSaveClick} />
+          <SavedRecipes recipes={recipes} onClick={onClick} />
         </Route>
         <Route path="/recipes/new">
           <NewRecipeForm onRecipeSubmit={onRecipeSubmit} />
@@ -63,10 +85,10 @@ function App() {
           <DetailedRecipe recipes={recipes} />
         </Route>
         <Route exact path="/recipes">
-          <RecipesContainer recipes={recipes} onSaveClick={onSaveClick} />
+          <RecipesContainer recipes={recipes} onClick={onClick} />
         </Route>
         <Route exact path="/">
-          <Home />
+          <Home recipes={recipes} />
         </Route>
       </Switch>
     </div>

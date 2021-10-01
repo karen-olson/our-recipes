@@ -3,7 +3,7 @@ import { Card, Grid } from "semantic-ui-react";
 import SearchBar from "./SearchBar";
 import RecipeCard from "./RecipeCard";
 
-function RecipesContainer({ recipes, onSaveClick }) {
+function RecipesContainer({ recipes, onClick }) {
   const [search, setSearch] = useState({ search: "", category: "all" });
 
   let filteredRecipes;
@@ -21,7 +21,7 @@ function RecipesContainer({ recipes, onSaveClick }) {
       recipe.name.toLowerCase().includes(search.search.toLowerCase())
     )
     .map((recipe) => (
-      <RecipeCard recipe={recipe} key={recipe.id} onSaveClick={onSaveClick} />
+      <RecipeCard recipe={recipe} key={recipe.id} onClick={onClick} />
     ));
 
   return (

@@ -2,29 +2,22 @@ import React, { useState } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
 import { Card, Icon, Image, Button, Label } from "semantic-ui-react";
 
-function RecipeCard({ recipe, onSaveClick }) {
+function RecipeCard({ recipe, onClick }) {
   const [likes, setLikes] = useState(recipe.likes);
   const [saved, setSaved] = useState(recipe.saved);
 
   const currentUrl = useRouteMatch().url;
 
   function handleLikeClick(e) {
-    fetch(`http://localhost:3001/recipes/${recipe.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ likes: likes + 1 }),
-    })
-      .then((response) => response.json())
-      .then((updatedRecipe) => setLikes(updatedRecipe.likes));
+    setLikes((likes) => likes + 1);
+    const updatedRecipe = { ...recipe, likes: likes + 1 };
+    onClick(updatedRecipe);
   }
 
   function handleSaveClick(e) {
     setSaved(!saved);
     const updatedRecipe = { ...recipe, saved: !saved };
-
-    onSaveClick(updatedRecipe);
+    onClick(updatedRecipe);
   }
 
   if (recipe) {
@@ -72,11 +65,7 @@ function RecipeCard({ recipe, onSaveClick }) {
           <Button as={Link} to={`/recipes/${recipe.id}`}>
             View Details
           </Button>
-        ) : (
-          <Button as={Link} to={`/recipes`}>
-            Go Back
-          </Button>
-        )}
+        ) : null}
       </Card>
     );
   } else {

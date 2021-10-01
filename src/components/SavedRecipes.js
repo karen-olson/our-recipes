@@ -3,7 +3,7 @@ import { Route, useRouteMatch } from "react-router-dom";
 import SavedRecipeLinks from "./SavedRecipeLinks";
 import DetailedRecipe from "./DetailedRecipe";
 
-function SavedRecipes({ recipes, onSaveClick }) {
+function SavedRecipes({ recipes, onClick }) {
   const savedRecipes = recipes.filter((recipe) => recipe.saved === true);
 
   const match = useRouteMatch();
@@ -15,7 +15,7 @@ function SavedRecipes({ recipes, onSaveClick }) {
         <h3>Choose a recipe from the list</h3>
       </Route>
       <Route path={`${match.url}/:id`}>
-        <DetailedRecipe recipes={savedRecipes} onSaveClick={onSaveClick} />
+        <DetailedRecipe recipes={savedRecipes} onClick={onClick} />
       </Route>
     </>
   );
