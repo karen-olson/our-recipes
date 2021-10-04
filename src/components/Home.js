@@ -4,7 +4,12 @@ import ClickMe from "./ClickMe";
 
 function Home({ recipes }) {
   const images = recipes.map((recipe) => (
-    <img src={recipe.image} className="sliderimg" alt={recipe.name} />
+    <img
+      src={recipe.image}
+      className="sliderimg"
+      alt={recipe.name}
+      key={recipe.id}
+    />
   ));
 
   return (
@@ -18,7 +23,9 @@ function Home({ recipes }) {
         recipes to contribute to our community. Share the love!
       </p>
       <br></br>
-      <AliceCarousel>{images}</AliceCarousel>
+      <AliceCarousel autoPlay autoPlayInterval="3000">
+        {images}
+      </AliceCarousel>
     </div>
   );
 }

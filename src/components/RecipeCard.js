@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
 import { Card, Icon, Image, Button, Label } from "semantic-ui-react";
 
-function RecipeCard({ recipe, onClick }) {
+function RecipeCard({ recipe, onButtonClick }) {
   const [likes, setLikes] = useState(recipe.likes);
   const [saved, setSaved] = useState(recipe.saved);
 
@@ -11,13 +11,13 @@ function RecipeCard({ recipe, onClick }) {
   function handleLikeClick(e) {
     setLikes((likes) => likes + 1);
     const updatedRecipe = { ...recipe, likes: likes + 1 };
-    onClick(updatedRecipe);
+    onButtonClick(updatedRecipe);
   }
 
   function handleSaveClick(e) {
     setSaved(!saved);
     const updatedRecipe = { ...recipe, saved: !saved };
-    onClick(updatedRecipe);
+    onButtonClick(updatedRecipe);
   }
 
   if (recipe) {

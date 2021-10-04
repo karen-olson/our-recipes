@@ -30,7 +30,7 @@ function App() {
       .then((newRecipeObject) => setRecipes([...recipes, newRecipeObject]));
   }
 
-  function onClick(updatedRecipe) {
+  function onButtonClick(updatedRecipe) {
     const updatedRecipes = recipes.map((recipe) => {
       if (recipe.id === updatedRecipe.id) {
         return updatedRecipe;
@@ -55,16 +55,16 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/recipes/saved">
-          <SavedRecipes recipes={recipes} onClick={onClick} />
+          <SavedRecipes recipes={recipes} onButtonClick={onButtonClick} />
         </Route>
         <Route path="/recipes/new">
           <NewRecipeForm onRecipeSubmit={onRecipeSubmit} />
         </Route>
         <Route exact path="/recipes/:id">
-          <DetailedRecipe recipes={recipes} />
+          <DetailedRecipe recipes={recipes} onButtonClick={onButtonClick} />
         </Route>
         <Route exact path="/recipes">
-          <RecipesContainer recipes={recipes} onClick={onClick} />
+          <RecipesContainer recipes={recipes} onButtonClick={onButtonClick} />
         </Route>
         <Route exact path="/">
           <Home recipes={recipes} />
