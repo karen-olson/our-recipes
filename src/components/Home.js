@@ -1,11 +1,10 @@
 import React from "react";
 import AliceCarousel from "react-alice-carousel";
-
-import { Header, Icon, Image } from "semantic-ui-react";
+import ClickMe from "./ClickMe";
 
 function Home({ recipes }) {
   const images = recipes.map((recipe) => (
-    <img src={recipe.image} className="sliderimg" />
+    <img src={recipe.image} className="sliderimg" alt={recipe.name} />
   ));
 
   return (
@@ -19,9 +18,7 @@ function Home({ recipes }) {
         recipes to contribute to our community. Share the love!
       </p>
       <br></br>
-      <AliceCarousel autoPlay autoPlayInterval="3000">
-        {images}
-      </AliceCarousel>
+      <AliceCarousel>{images}</AliceCarousel>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Grid } from "semantic-ui-react";
+import { Card } from "semantic-ui-react";
 import SearchBar from "./SearchBar";
 import RecipeCard from "./RecipeCard";
 

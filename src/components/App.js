@@ -30,27 +30,6 @@ function App() {
       .then((newRecipeObject) => setRecipes([...recipes, newRecipeObject]));
   }
 
-  // function onLikeClick(updatedRecipe) {
-  //   const updatedRecipe = recipes.map((recipe) => {
-  //     if (recipe.id === updatedRecipe.id) {
-  //       return updatedRecipe;
-  //     } else {
-  //       return recipe;
-  //     }
-  //   });
-
-  //   fetch(`http://localhost:3001/recipes/${updatedRecipe.id}`, {
-  //     method: "PATCH",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(updatedRecipe),
-  //   })
-  //     .then((response) => response.json())
-  //     .then(() => setRecipes(updatedRecipes));
-
-  // }
-
   function onClick(updatedRecipe) {
     const updatedRecipes = recipes.map((recipe) => {
       if (recipe.id === updatedRecipe.id) {

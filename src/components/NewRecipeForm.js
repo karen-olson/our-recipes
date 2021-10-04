@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Grid, Checkbox, Button } from "semantic-ui-react";
+import { Form, Grid } from "semantic-ui-react";
 
 function NewRecipeForm({ onRecipeSubmit }) {
   const [formData, setFormData] = useState({
