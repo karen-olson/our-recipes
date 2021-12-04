@@ -22,7 +22,7 @@ function Home({ recipes }) {
         recipes to contribute to our community. Share the love!
       </p>
       <br></br>
-      <AliceCarousel autoPlay autoPlayInterval="3000">
+      <AliceCarousel autoPlay autoPlayInterval="2000" infinite>
         {images}
       </AliceCarousel>
     </div>
