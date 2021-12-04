@@ -2,6 +2,7 @@ import React from "react";
 import { Route, useRouteMatch } from "react-router-dom";
 import SavedRecipeLinks from "./SavedRecipeLinks";
 import DetailedRecipe from "./DetailedRecipe";
+import { Grid } from "semantic-ui-react";
 
 function SavedRecipes({ recipes, onButtonClick }) {
   const savedRecipes = recipes.filter((recipe) => recipe.saved === true);
@@ -15,7 +16,14 @@ function SavedRecipes({ recipes, onButtonClick }) {
         <h3>Choose a recipe from the list</h3>
       </Route>
       <Route path={`${match.url}/:id`}>
-        <DetailedRecipe recipes={savedRecipes} onButtonClick={onButtonClick} />
+        <Grid centered columns={1}>
+          <Grid.Column>
+            <DetailedRecipe
+              recipes={savedRecipes}
+              onButtonClick={onButtonClick}
+            />
+          </Grid.Column>
+        </Grid>
       </Route>
     </>
   );

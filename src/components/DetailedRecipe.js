@@ -6,7 +6,7 @@ import RecipeDetails from "./RecipeDetails";
 
 function DetailedRecipe({ recipes, onButtonClick }) {
   const id = parseInt(useParams().id);
-  const recipe = recipes.filter((recipe) => recipe.id === id)[0];
+  const recipe = recipes.find((recipe) => recipe.id === id);
 
   if (recipe) {
     return (
