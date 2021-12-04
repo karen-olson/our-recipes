@@ -13,13 +13,13 @@ function App() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/recipes")
+    fetch("https://our-recipes-backend.herokuapp.com/recipes")
       .then((resp) => resp.json())
       .then((recipes) => setRecipes(recipes));
   }, []);
 
   function onRecipeSubmit(newRecipeObject) {
-    fetch("http://localhost:3001/recipes", {
+    fetch("https://our-recipes-backend.herokuapp.com/recipes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -39,13 +39,16 @@ function App() {
       }
     });
 
-    fetch(`http://localhost:3001/recipes/${updatedRecipe.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedRecipe),
-    })
+    fetch(
+      `https://our-recipes-backend.herokuapp.com/recipes/${updatedRecipe.id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedRecipe),
+      }
+    )
       .then((response) => response.json())
       .then(() => setRecipes(updatedRecipes));
   }
