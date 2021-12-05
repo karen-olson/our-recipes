@@ -8,8 +8,6 @@ function RecipeCard({ recipe, onButtonClick }) {
 
   const currentUrl = useRouteMatch().url;
 
-  console.log("likes: ", likes);
-
   function handleLikeClick(e) {
     setLikes(recipe.likes + 1);
     const updatedRecipe = { ...recipe, likes: recipe.likes + 1 };
@@ -20,6 +18,10 @@ function RecipeCard({ recipe, onButtonClick }) {
     setSaved(!saved);
     const updatedRecipe = { ...recipe, saved: !saved };
     onButtonClick(updatedRecipe);
+  }
+
+  if (currentUrl === `/recipes/saved`) {
+    console.log("likes: ", likes);
   }
 
   if (recipe) {
