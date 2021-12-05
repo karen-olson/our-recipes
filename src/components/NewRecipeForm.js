@@ -38,8 +38,6 @@ function NewRecipeForm({ onRecipeSubmit }) {
     setFormData(defaultFormData);
   }
 
-  console.log("formData: ", formData);
-
   const options = [
     { key: "all", text: "Select a category", value: "all" },
     { key: "breakfast", text: "Breakfast", value: "breakfast" },
