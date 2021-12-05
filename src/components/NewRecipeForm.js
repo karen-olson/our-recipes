@@ -1,23 +1,23 @@
 import React, { useState } from "react";
-import { Form, Grid } from "semantic-ui-react";
+import { Form, Grid, Select } from "semantic-ui-react";
 
 function NewRecipeForm({ onRecipeSubmit }) {
-  const [formData, setFormData] = useState({
+  const defaultFormData = {
     name: "",
     category: "",
     image: "",
     prepTimeInMinutes: "",
     servings: "",
-    ingredients: [],
-    instructions: [],
+    ingredients: "",
+    instructions: "",
     sourceUrl: "",
     likes: 0,
     saved: false,
-  });
+  };
 
-  function handleChange(e) {
-    const name = e.target.name;
-    const value = e.target.value;
+  const [formData, setFormData] = useState(defaultFormData);
+
+  function handleChange(e, { name, value }) {
     setFormData({ ...formData, [name]: value });
   }
 
@@ -35,19 +35,20 @@ function NewRecipeForm({ onRecipeSubmit }) {
 
     onRecipeSubmit(recipeObject);
 
-    setFormData({
-      name: "",
-      category: "",
-      image: "",
-      prepTimeInMinutes: "",
-      servings: "",
-      ingredients: [],
-      instructions: [],
-      sourceUrl: "",
-      likes: 0,
-      saved: false,
-    });
+    setFormData(defaultFormData);
   }
+
+  console.log("formData: ", formData);
+
+  const options = [
+    { key: "all", text: "Select a category", value: "all" },
+    { key: "breakfast", text: "Breakfast", value: "breakfast" },
+    { key: "lunch", text: "Lunch", value: "lunch" },
+    { key: "dinner", text: "Dinner", value: "dinner" },
+    { key: "sides", text: "Sides", value: "sides" },
+    { key: "snacks", text: "Snacks", value: "snacks" },
+    { key: "dessert", text: "Dessert", value: "dessert" },
+  ];
 
   return (
     <>
@@ -69,17 +70,18 @@ function NewRecipeForm({ onRecipeSubmit }) {
                   placeholder="Name"
                   onChange={handleChange}
                   value={formData.name}
-                  // className="form-input"
                 />
               </Form.Field>
               <Form.Field>
                 <label htmlFor="category">Category</label>
-                <Form.Input
-                  type="text"
+                <Select
+                  compact
+                  options={options}
+                  id="category"
                   name="category"
                   placeholder="Category"
-                  onChange={handleChange}
                   value={formData.category}
+                  onChange={handleChange}
                 />
               </Form.Field>
               <Form.Field>

@@ -12,6 +12,7 @@ function SearchBar({ onSearch }) {
     { key: "breakfast", text: "Breakfast", value: "breakfast" },
     { key: "lunch", text: "Lunch", value: "lunch" },
     { key: "dinner", text: "Dinner", value: "dinner" },
+    { key: "sides", text: "Sides", value: "sides" },
     { key: "snacks", text: "Snacks", value: "snacks" },
     { key: "dessert", text: "Dessert", value: "dessert" },
   ];
