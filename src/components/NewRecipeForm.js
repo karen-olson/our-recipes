@@ -118,7 +118,7 @@ function NewRecipeForm({ onRecipeSubmit }) {
                 <label htmlFor="ingredients">Ingredients</label>
                 <Form.TextArea
                   name="ingredients"
-                  placeholder="Ingredients list"
+                  placeholder="Enter ingredients list. Press enter once between each ingredient. Remove any checkboxes or bullet points before submitting."
                   onChange={handleChange}
                   value={formData.ingredients}
                   rows="8"
@@ -129,7 +129,7 @@ function NewRecipeForm({ onRecipeSubmit }) {
                 <label htmlFor="instructions">Instructions</label>
                 <Form.TextArea
                   name="instructions"
-                  placeholder="Instructions"
+                  placeholder="Enter instructions list. Press enter once between each instruction. Remove any step numbers, checkboxes, or bullet points before submitting."
                   onChange={handleChange}
                   value={formData.instructions}
                   rows="8"
