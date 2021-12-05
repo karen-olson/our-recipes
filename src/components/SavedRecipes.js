@@ -13,9 +13,11 @@ function SavedRecipes({ recipes, onButtonClick }) {
     <>
       <SavedRecipeLinks savedRecipes={savedRecipes} />
       <Route exact path={match.url}>
-        <h3>
-          Choose a recipe from the list, or visit "Recipes" to save a recipe.
-        </h3>
+        <div style={{ marginTop: "45px", textAlign: "center" }}>
+          <h3>
+            Choose a recipe from the list, or visit "Recipes" to save a recipe.
+          </h3>
+        </div>
       </Route>
       <Route exact path={`${match.url}/:id`}>
         <Grid centered columns={1}>

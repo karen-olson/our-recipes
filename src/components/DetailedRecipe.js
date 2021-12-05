@@ -19,8 +19,16 @@ function DetailedRecipe({ recipes, onButtonClick }) {
         </Segment>
       </Container>
     );
+  } else if (id) {
+    return (
+      <div style={{ marginTop: "45px", textAlign: "center" }}>
+        <h3>
+          Choose a recipe from the list, or visit "Recipes" to save a recipe.
+        </h3>
+      </div>
+    );
   } else {
-    return <h1>No recipe found</h1>;
+    return <h2>No recipe found</h2>;
   }
 }
 
