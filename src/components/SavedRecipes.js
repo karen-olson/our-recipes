@@ -8,12 +8,15 @@ function SavedRecipes({ recipes, onButtonClick }) {
   const savedRecipes = recipes.filter((recipe) => recipe.saved === true);
 
   const match = useRouteMatch();
+  console.log("url: ", match);
 
   return (
     <>
       <SavedRecipeLinks savedRecipes={savedRecipes} />
       <Route exact path={match.url}>
-        <h3>Choose a recipe from the list</h3>
+        <h3>
+          Choose a recipe from the list, or visit "Recipes" to save a recipe.
+        </h3>
       </Route>
       <Route path={`${match.url}/:id`}>
         <Grid centered columns={1}>

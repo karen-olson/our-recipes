@@ -7,6 +7,7 @@ import RecipeDetails from "./RecipeDetails";
 function DetailedRecipe({ recipes, onButtonClick }) {
   const id = parseInt(useParams().id);
   const recipe = recipes.find((recipe) => recipe.id === id);
+  // debugger;
 
   if (recipe) {
     return (

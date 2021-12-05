@@ -4,15 +4,9 @@ import { Link } from "react-router-dom";
 
 function SavedRecipeLinks({ savedRecipes }) {
   const recipeLinks = savedRecipes.map((recipe) => (
-    // <li key={recipe.id}>
-    // <Link key={recipe.id} to={`/recipes/saved/${recipe.id}`}>
-    //   {recipe.name}
-    // </Link>
     <List.Item as={Link} key={recipe.id} to={`/recipes/saved/${recipe.id}`}>
       {recipe.name}
     </List.Item>
-    // {recipe.name}
-    // </li>
   ));
 
   return (
