@@ -18,7 +18,7 @@ function SavedRecipes({ recipes, onButtonClick }) {
           Choose a recipe from the list, or visit "Recipes" to save a recipe.
         </h3>
       </Route>
-      <Route path={`${match.url}/:id`}>
+      <Route exact path={`${match.url}/:id`}>
         <Grid centered columns={1}>
           <Grid.Column>
             <DetailedRecipe
