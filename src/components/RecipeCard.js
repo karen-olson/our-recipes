@@ -9,8 +9,8 @@ function RecipeCard({ recipe, onButtonClick }) {
   const currentUrl = useRouteMatch().url;
 
   function handleLikeClick(e) {
-    setLikes((likes) => likes + 1);
-    const updatedRecipe = { ...recipe, likes: likes + 1 };
+    setLikes(recipe.likes + 1);
+    const updatedRecipe = { ...recipe, likes: recipe.likes + 1 };
     onButtonClick(updatedRecipe);
   }
 
