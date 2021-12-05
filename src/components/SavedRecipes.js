@@ -8,7 +8,6 @@ function SavedRecipes({ recipes, onButtonClick }) {
   const savedRecipes = recipes.filter((recipe) => recipe.saved === true);
 
   const match = useRouteMatch();
-  console.log("url: ", match);
 
   return (
     <>

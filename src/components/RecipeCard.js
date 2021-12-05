@@ -40,7 +40,7 @@ function RecipeCard({ recipe, onButtonClick }) {
               Like
             </Button>
             <Label basic pointing="left">
-              {likes}
+              {recipe.likes}
             </Label>
           </Button>
           <Button as="div" labelPosition="right">
@@ -61,7 +61,7 @@ function RecipeCard({ recipe, onButtonClick }) {
           src={recipe.image}
           alt={recipe.name}
         ></Image>
-        {currentUrl === `/recipes` || currentUrl === `/recipes/saved` ? (
+        {currentUrl === `/recipes` ? (
           <Button as={Link} to={`/recipes/${recipe.id}`}>
             View Details
           </Button>
