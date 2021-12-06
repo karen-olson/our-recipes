@@ -4,7 +4,7 @@ A community-based recipe sharing app where users can post and save recipes.
 
 ## Video Walkthrough
 
-Check out the video walkthrough of this project to see its features in action.
+Check out the [video walkthrough](https://www.loom.com/share/12181e6f17e24c0583eb2a460e240356) of this project to see its features in action.
 
 ## Deployed Site and Backend
 
